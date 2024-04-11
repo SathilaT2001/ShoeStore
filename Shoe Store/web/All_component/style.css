@@ -1,6 +1,10 @@
+<<<<<<< Updated upstream
 
 
-.navbar .nav-item: hover .nav-link{
+.navbar .nav-item:hover .nav-link{
+=======
+.navbar .nav-item:hover.nav-link{
+>>>>>>> Stashed changes
     background-color: lightblue;
     color: black;
     border-radius: 15px;
