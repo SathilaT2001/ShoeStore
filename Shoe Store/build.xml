@@ -7,7 +7,7 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="Shoe_Store" default="default" basedir=".">
+<project name="Shoe_Store" default="text" basedir=".">
     <description>Builds, tests, and runs the project Shoe Store.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
