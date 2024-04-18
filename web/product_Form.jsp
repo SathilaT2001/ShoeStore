@@ -1,6 +1,6 @@
 <%-- 
-    Document   : add_product_form
-    Created on : Apr 11, 2024, 10:11:43 AM
+    Document   : product_Form
+    Created on : Apr 18, 2024, 8:42:16 AM
     Author     : Asus
 --%>
 
@@ -9,12 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Add Products</title>
-        
-        <style>
+        <title>Product Form</title>
+            <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f0efe1;
             margin: 0;
             padding: 0;
         }
@@ -22,9 +21,10 @@
             max-width: 500px;
             margin: 50px auto;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
+            background-color:#f5f1d7;
+            border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
         }
         h2 {
             text-align: center;
@@ -56,7 +56,7 @@
             padding: 10px;
             background-color: #007bff;
             border: none;
-            border-radius: 5px;
+            border-radius: 20px;
             color: #fff;
             font-size: 16px;
             cursor: pointer;
@@ -65,12 +65,11 @@
             background-color: #0056b3;
         }
     </style>
-        
-    </head>
-    <body>
-        <div class="container">
+</head>
+<body>
+    <div class="container">
         <h2>Add Product</h2>
-        <form action="upload" method="post" enctype="multipart/form-data">
+        <form action="addProduct" method="post" enctype="multipart/form-data">
             <label for="id">ID:</label>
             <input type="text" id="id" name="id" required>
             
@@ -93,10 +92,10 @@
             <textarea id="description" name="description" rows="4" cols="50" required></textarea>
             
             <label for="price">Price:</label>
-            <input type="text" id="price" name="price" required>
+            <input type="text" id="price" name="price" >
             
             <label for="quantity">Quantity:</label>
-            <input type="text" id="quantity" name="quantity" required>
+            <input type="text" id="quantity" name="quantity" >
             
             <label for="size">Size:</label>
             
@@ -113,6 +112,7 @@
             
             <input type="submit" value="Submit">
         </form>
+        <br>
     </div>
-    </body>
+</body>
 </html>
