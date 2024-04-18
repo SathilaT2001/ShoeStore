@@ -7,9 +7,29 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="Shoe_Store" default="default" basedir=".">
-    <description>Builds, tests, and runs the project Shoe_Store.</description>
+<project name="Shoe_Store" default="text" basedir=".">
+    <description>Builds, tests, and runs the project Shoe Store.</description>
     <import file="nbproject/build-impl.xml"/>
+
+ <path id="classpath">
+        <pathelement path="${java.class.path}/lib/junit.jar"/>
+        <!-- Include other dependencies as needed -->
+    </path>
+
+    <!-- Target to run JUnit tests -->
+    <target name="test">
+        <junit printsummary="yes" haltonfailure="yes">
+            <classpath refid="classpath"/>
+            <formatter type="brief" usefile="false"/>
+            <batchtest fork="yes" todir="${test.reports}">
+                <fileset dir="${src.test}">
+                    <include name="/Test.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+    
     <!--
 
     There exist several targets which are by default empty and which can be 
