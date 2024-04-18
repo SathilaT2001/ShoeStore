@@ -29,7 +29,7 @@
             text-align: center;
             color: #333;
         }
-        form {
+        .formad {
             display: flex;
             flex-direction: column;
         }
@@ -68,7 +68,7 @@
 <body>
     <div class="container">
         <h2>Add Product</h2>
-        <form action="addProduct" method="Post" enctype="multipart/form-data">
+        <form action="addProduct" method="Post" enctype="multipart/form-data" class="formad">
             <label for="id">ID:</label>
             <input type="text" id="id" name="id" required>
             
