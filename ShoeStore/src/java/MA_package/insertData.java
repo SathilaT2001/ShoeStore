@@ -21,7 +21,7 @@ public class insertData {
     
     public void connectToDB() {
         String driver = "com.mysql.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/newshoe";
+        String url = "jdbc:mysql://localhost:3306/shoe_store";
         String username = "root";
         String password = "";
 
