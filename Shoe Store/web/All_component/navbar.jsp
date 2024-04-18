@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:Shoe Store/web/All_component/navbar.jsp
 <%--
 
 <div class="container-fluid" style="height: 10px;background-color: #F7F7F7"></div>
@@ -55,6 +56,8 @@
 --%>
 
 
+=======
+>>>>>>> Stashed changes:ShoeStore/web/All_component/navbar.jsp
 <header class="header">
     
     
@@ -67,7 +70,11 @@
         <div class="icons">
             
             <a href="#" class="fas fa-shopping-cart"></a>
+<<<<<<< Updated upstream:Shoe Store/web/All_component/navbar.jsp
             <div id="login-btn" class="fas fa-user"></div>
+=======
+            <a href="" id="login-btn" class="fas fa-user"></a>
+>>>>>>> Stashed changes:ShoeStore/web/All_component/navbar.jsp
         </div>
     </div>
     
