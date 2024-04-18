@@ -74,12 +74,25 @@ public class addProduct extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        // processRequest(request, response);
-       String id = request.getParameter("id");
+       int quantity = 0;
+       float price = 0.0f;
+       
+        String id = request.getParameter("id");
         String name = request.getParameter("name");
         String category = request.getParameter("category");
         String description = request.getParameter("description");
-        float price = Float.parseFloat(request.getParameter("price"));
-        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        String priceParam = request.getParameter("price"); 
+    if (priceParam != null && !priceParam.isEmpty()) {
+        
+        price = Float.parseFloat(priceParam);
+    }
+
+    // Retrieve quantity parameter and check if it's not null and not empty
+    String quantityParam = request.getParameter("quantity");
+    if (quantityParam != null && !quantityParam.isEmpty()) {
+        // Parse the quantity parameter as an integer
+        quantity = Integer.parseInt(quantityParam);
+    }
         String size = request.getParameter("size");
         Part imagePart = request.getPart("image");
         InputStream image = null;
@@ -90,8 +103,6 @@ public class addProduct extends HttpServlet {
       
 
        insertProduct db = new insertProduct();
-       
-      
            db.insertFormData(id, name, category, description, price,quantity, size, image);
            response.sendRedirect("product_Form.jsp");
            

@@ -6,6 +6,7 @@ package Ma_Package;
 
 import java.io.InputStream;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -18,10 +19,24 @@ import java.util.logging.Logger;
  */
 class insertProduct {
 Connection conn;
+
+    public void connectToDB() {
+        String driver = "com.mysql.jdbc.Driver";
+        String url = "jdbc:mysql://localhost:3306/shoe_store";
+        String username = "root";
+        String password = "";
+
+        try {
+            Class.forName(driver);
+            conn = DriverManager.getConnection(url, username, password);
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(insertProduct.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+
     public void insertFormData(String id, String name, String category, String description, float price, int quantity, String size, InputStream image) {
-        DBConnection DB = new DBConnection();
-        
-        DB.connectToDB();
+            connectToDB();
         try {
             String men = "men",women = "women",kids = "kids";
         if (men.equals(category)){
