@@ -39,7 +39,7 @@ public class insertData {
     public void insertFormData(String id, String name, String category, String description, String price, String quantity, String size, InputStream image) {
         connectToDB();
         try {
-            String men = "men",women = "women",kids = "kids";
+            String men = "men",women = "women",kids = "kids", new1="new1",sale="sale";
         if (men.equals(category)){
             String query = "INSERT INTO men_products  (id, name, category, description, price, quantity, size, image) VALUES (?, ?, ?, ?, ?, ?,?, ?)";
             PreparedStatement statement = conn.prepareStatement(query);
@@ -68,6 +68,33 @@ public class insertData {
         }
         else if(kids.equals(category)){
             String query = "INSERT INTO kids_products  (id, name, category, description, price, quantity, size, image) VALUES (?, ?, ?, ?, ?, ?,?, ?)";
+            PreparedStatement statement = conn.prepareStatement(query);
+            statement.setString(1, id);
+            statement.setString(2, name);
+            statement.setString(3, category);
+            statement.setString(4, description);
+            statement.setString(5, price);
+            statement.setString(6, quantity);
+            statement.setString(7, size);
+            statement.setBlob(8, image);
+            statement.executeUpdate();
+        }
+        
+         else if(new1.equals(category)){
+            String query = "INSERT INTO new_products  (id, name, category, description, price, quantity, size, image) VALUES (?, ?, ?, ?, ?, ?,?, ?)";
+            PreparedStatement statement = conn.prepareStatement(query);
+            statement.setString(1, id);
+            statement.setString(2, name);
+            statement.setString(3, category);
+            statement.setString(4, description);
+            statement.setString(5, price);
+            statement.setString(6, quantity);
+            statement.setString(7, size);
+            statement.setBlob(8, image);
+            statement.executeUpdate();
+        }
+          else if(sale.equals(category)){
+            String query = "INSERT INTO sale_products  (id, name, category, description, price, quantity, size, image) VALUES (?, ?, ?, ?, ?, ?,?, ?)";
             PreparedStatement statement = conn.prepareStatement(query);
             statement.setString(1, id);
             statement.setString(2, name);

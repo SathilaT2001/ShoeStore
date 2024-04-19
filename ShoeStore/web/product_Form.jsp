@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Product Form</title>
  <script>
         function addSizeOption(selectElement, sizeValue) {
             var option = document.createElement("option");
@@ -51,7 +52,47 @@
                     addSizeOption(sizeSelect, "39");
                     addSizeOption(sizeSelect, "40");
                     addSizeOption(sizeSelect, "41");
-                }
+                }else if (categoryValue === 'new1') {
+                addSizeOption(sizeSelect, "");
+                addSizeOption(sizeSelect, "17");
+                addSizeOption(sizeSelect, "20");
+                addSizeOption(sizeSelect, "22");
+                addSizeOption(sizeSelect, "24");
+                addSizeOption(sizeSelect, "28");
+                addSizeOption(sizeSelect, "32");
+                addSizeOption(sizeSelect, "34");
+                addSizeOption(sizeSelect, "35");
+                addSizeOption(sizeSelect, "36");
+                addSizeOption(sizeSelect, "37");
+                addSizeOption(sizeSelect, "38");
+                addSizeOption(sizeSelect, "39");
+                addSizeOption(sizeSelect, "40");
+                addSizeOption(sizeSelect, "41");
+                addSizeOption(sizeSelect, "42");
+                addSizeOption(sizeSelect, "43");
+                addSizeOption(sizeSelect, "44");
+                addSizeOption(sizeSelect, "45");
+            }else if (categoryValue === 'sale') {
+               addSizeOption(sizeSelect, "");
+                addSizeOption(sizeSelect, "17");
+                addSizeOption(sizeSelect, "20");
+                addSizeOption(sizeSelect, "22");
+                addSizeOption(sizeSelect, "24");
+                addSizeOption(sizeSelect, "28");
+                addSizeOption(sizeSelect, "32");
+                addSizeOption(sizeSelect, "34");
+                addSizeOption(sizeSelect, "35");
+                addSizeOption(sizeSelect, "36");
+                addSizeOption(sizeSelect, "37");
+                addSizeOption(sizeSelect, "38");
+                addSizeOption(sizeSelect, "39");
+                addSizeOption(sizeSelect, "40");
+                addSizeOption(sizeSelect, "41");
+                addSizeOption(sizeSelect, "42");
+                addSizeOption(sizeSelect, "43");
+                addSizeOption(sizeSelect, "44");
+                addSizeOption(sizeSelect, "45");
+            }
             }
         }
 
@@ -139,6 +180,14 @@
                 
                 <input type="radio" id="category_women" name="category" value="women" onclick="handleCategorySelection()" required>
                 <label for="category_women">Women</label>
+                
+                <input type="radio" id="category_new1" name="category" value="new1" onclick="handleCategorySelection()" required>
+                <label for="category_new1">New Arrivals</label>
+                
+                 <input type="radio" id="category_sale" name="category" value="sale" onclick="handleCategorySelection()" required>
+                <label for="category_sale">Sale</label>
+                
+                
             </div>
             
             <label for="description">Description:</label>
