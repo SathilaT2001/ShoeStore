@@ -10,8 +10,8 @@
         </form>
         <div class="icons">
             
-            <a href="" class="fas fa-shopping-cart"></a>
-            <a href="login.jsp" id="login-btn" class="fas fa-user"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="" id="login-btn" class="fas fa-user"></a>
         </div>
     </div>
     
