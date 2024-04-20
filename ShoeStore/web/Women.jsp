@@ -113,27 +113,51 @@
     }
 
     @media only screen and (max-width: 768px) {
+               .container{
+            margin-top: 30px;
+        }
         .card {
             width: calc(50% - 36px); 
         }
             .card-img-top {
         width: 100%;
-        height: 300px;
+        height: auto;
+       
+    }
+            .category {
+            font-size: 1.5rem;
+            height: auto;
+        }
+        .description{
+            font-size: 1.5rem;
+            height: 90px;
+        }
     }
 
     @media only screen and (max-width: 480px) {
+        .container{
+            margin-top: 30px;
+        }
         .card {
             width: calc(100% - 36px);
             height: auto;
+            margin: 10px;
+          
         }
-        .category{
-            font-size: 1rem;
+        .category {
+            font-size: 1.5rem;
+            height: auto;
+        }
+        .description{
+            font-size: 1.5rem;
+            height: auto;
         }
     }
 </style>
     </head>
     <body>
          <%@include file="All_component/navbar.jsp"%>
+         
 <div class="container">
     
     <% if (!products.isEmpty()) { %>
