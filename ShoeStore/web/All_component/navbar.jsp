@@ -17,10 +17,10 @@
     
     <div class="hedder-2">
         <nav class="navbar1">
-            <a href="#Men">Men</a>
-            <a href="#Women">Women</a>
-            <a href="#Kids">Kids</a>
-            <a href="#New Arrival">New Arrival</a>
+            <a href="Men.jsp">Men</a>
+            <a href="Women.jsp">Women</a>
+            <a href="Kids.jsp">Kids</a>
+            <a href="New_Arrival.jsp">New Arrival</a>
         </nav>
     </div>
     

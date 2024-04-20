@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Men
-    Created on : Apr 18, 2024, 4:45:20 PM
+    Document   : New_Arrivels
+    Created on : Apr 20, 2024, 12:33:00 PM
     Author     : Asus
 --%>
 
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>ShoiNet Men</title>
+        <title>ShoiNet New Arrivals</title>
         <%@include file="All_component/allcss.jsp"%>
     </head>
     <body>

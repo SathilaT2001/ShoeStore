@@ -9,9 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>ShoiNet Kids</title>
+        <%@include file="All_component/allcss.jsp"%>
     </head>
     <body>
+         <%@include file="All_component/navbar.jsp"%>
         <h1>Hello World!</h1>
+         <%@include file="All_component/footer.jsp"%>
     </body>
 </html>

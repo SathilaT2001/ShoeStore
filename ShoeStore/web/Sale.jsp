@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Men
-    Created on : Apr 18, 2024, 4:45:20 PM
+    Document   : Sale
+    Created on : Apr 20, 2024, 12:33:09 PM
     Author     : Asus
 --%>
 
@@ -9,12 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>ShoiNet Men</title>
-        <%@include file="All_component/allcss.jsp"%>
+        <title>JSP Page</title>
     </head>
     <body>
-         <%@include file="All_component/navbar.jsp"%>
         <h1>Hello World!</h1>
-         <%@include file="All_component/footer.jsp"%>
     </body>
 </html>
