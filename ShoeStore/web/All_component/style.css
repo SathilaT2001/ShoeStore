@@ -328,17 +328,18 @@ section{
    
 }
 
-.footer .box-container .box h3{
-    font-size: 2.2rem;
+.footer .box-container .box {
+    font-size: 1.5rem;
     color:var(--black);
-    padding:1rem 0;
+    padding:1rem 0;    
 }
 
 .footer .box-container .box a{
     display: block;
-    font-size: 1.4rem;
+    font-size: 1rem;
     color:var(--light-color);
     padding:1rem 0;
+    text-decoration: none;
 }
 
 .footer .box-container .box a i{
@@ -348,6 +349,7 @@ section{
 
 .footer .box-container .box a:hover i{
     padding-right: 2rem;
+    
 }
 
 .footer .share{
@@ -357,10 +359,10 @@ section{
 
 
 .footer .share a{
-    height: 5rem;
-    width: 5rem;
-    line-height: 5rem;
-    font-size: 2rem;
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    font-size: 1.5rem;
     color:#fff;
     background:var(--blue);
     margin:0.3rem;
@@ -369,6 +371,7 @@ section{
 
 .footer .share a:hover{
     background:var(--black);
+    text-decoration: none;
 }
 
 .footer .credit{
@@ -376,7 +379,7 @@ section{
     margin-top: 2rem;
     padding: 0 1rem;
     padding-top: 2.5rem;
-    font-size: 2rem;
+    font-size: 1rem;
     color:var(--light-color);
     text-align: center;
 }

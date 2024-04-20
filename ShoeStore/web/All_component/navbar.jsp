@@ -3,7 +3,7 @@
     
     
     <div class="hedder-1">
-        <a href="#" class="logo"><img src="img/Logo_1.jpeg" width="70" height="70" class="ilogo"></img> ShoiNet</a>
+        <a href="index.jsp" class="logo"><img src="img/Logo_1.jpeg" width="70" height="70" class="ilogo" href="index.jsp"></img> ShoiNet</a>
         <form action="" class="search-form">
             <input type="search" name="" placeholder="Search here..." id="search-box">
             <label for="search-box" class="fas fa-search"></label>
@@ -11,7 +11,7 @@
         <div class="icons">
             
             <a href="#" class="fas fa-shopping-cart"></a>
-            <a href="" id="login-btn" class="fas fa-user"></a>
+            <a href="login.jsp" id="login-btn" class="fas fa-user"></a>
         </div>
     </div>
     
@@ -20,7 +20,7 @@
             <a href="#Men">Men</a>
             <a href="#Women">Women</a>
             <a href="#Kids">Kids</a>
-            <a href="#New Arrival">New Arrival</a>
+            <a href="#New Arrival">Contact us</a>
         </nav>
     </div>
     
@@ -32,5 +32,5 @@
             <a href="#Men">Men</a>
             <a href="#Women">Women</a>
             <a href="#Kids">Kids</a>
-            <a href="#New Arrival">New Arrival</a>
+            <a href="#New Arrival">Contact us</a>
         </nav>
