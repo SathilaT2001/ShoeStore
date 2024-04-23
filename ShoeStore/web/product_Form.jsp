@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Product Form</title>
+        <%@include file="All_component/allcss.jsp"%>
  <script>
         function addSizeOption(selectElement, sizeValue) {
             var option = document.createElement("option");
@@ -160,7 +161,7 @@
         }
     </style>
 </head>
-<body>
+<body><%@include file="All_component/navbar.jsp"%>
     <div class="container">
         <h2>Add Product</h2>
         <form action="addProduct" method="Post" enctype="multipart/form-data" class="formad">
