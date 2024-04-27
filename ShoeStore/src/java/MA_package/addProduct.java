@@ -92,9 +92,7 @@ public class addProduct extends HttpServlet {
       
 
        insertData db = new insertData();
-       
-      
-           db.insertFormData(id, name, category, description, price,quantity, size, image);
+       db.insertFormData(id, name, category, description, price,quantity, size, image);
            response.sendRedirect("product_Form.jsp");
     
     

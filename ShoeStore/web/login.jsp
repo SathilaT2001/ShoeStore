@@ -14,6 +14,7 @@
         <title>ShoiNet:login</title>
         <%@include file="All_component/allcss.jsp"%>
         
+
     </head>
     <body style="background-color: #f0f1f2;" >
          <%@include file="All_component/navbar.jsp"%>

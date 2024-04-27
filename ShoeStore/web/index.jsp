@@ -14,10 +14,7 @@
         
        
         <%@include file="All_component/allcss.jsp" %>
-<<<<<<< Updated upstream:Shoe Store/web/index.jsp
-=======
          
->>>>>>> Stashed changes:ShoeStore/web/index.jsp
         
         
     </head>
@@ -83,10 +80,9 @@
         </div>
         
     </section>
-<<<<<<< Updated upstream:Shoe Store/web/index.jsp
-       
-=======
-       <%@include file="product_Form.jsp" %>
->>>>>>> Stashed changes:ShoeStore/web/index.jsp
+       <footer>
+            <%@include file="All_component/footer.jsp" %>
+     </footer>   
+
     </body>
 </html>

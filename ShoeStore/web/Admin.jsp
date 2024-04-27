@@ -9,7 +9,7 @@
     <%@include file="All_component/allcss.jsp"%>
    
    <style>
-       
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;

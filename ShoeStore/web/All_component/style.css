@@ -1,92 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-<<<<<<< Updated upstream:Shoe Store/web/All_component/style.css
-/*
 
-.navbar{
-    background-color: #EAF9FA;
-    font-family: 'Poppins',sans-serif;   
-}
-
-
-.navbar .nav-item:hover .nav-link{
-}
-.navbar .nav-item:hover.nav-link{
-    background-color: lightblue;
-}
-
-.navbar-toggler{
-    color: black;
-    background-color: white;
-}
-.navbar .nav-item:hover .nav-link{
-    background-color: white;
-    color: black;
-    border-radius: 20px;
-    
-    
-}
-
-.corner:hover {
-    background-color: white;
-    color: black;
-    border-radius: 20px; 
-}
-
-.fcolor{
-    color: black;
-    
-}
-
-.body-change{
-    background: #F7F7F7;
-    
-}
-
-
-.search{
-    
-    width: max-content;
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    border-radius: 28px;
-    background: white; 
-    width: 400px;
-    transition: background 0.25s;
-    box-shadow: 0 0px 0px rgba(0,0,0,0);
-    
-}
-
-.search:focus-within{
-    background: #F2F2F2;
-}
-
-.search-input{
-    font-size: 16px;
-    font-family: 'Poppins',sans-serif;
-    color: #333333;
-    margin-left: 14px;
-    outline: none;
-    border: none;
-    background: transparent;
-    width: 100px;
-    flex: 1;
-}
-
-.respo{
-    display: flex;
-}
-.search-input::placeholder,
-.search-icon{
-    color: rgba(0,0,0,0.5);
-    margin-right: 10px;
-    margin-top: 3px;
-}
-
-*/
-
-=======
->>>>>>> Stashed changes:ShoeStore/web/All_component/style.css
 :root{
     --blue:#43766C;
     --dark-color:#F8FAE5;
@@ -407,6 +320,74 @@ section{
     padding-bottom: .5rem;
     
 }
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+   
+}
+
+.footer .box-container .box {
+    font-size: 1.5rem;
+    color:var(--black);
+    padding:1rem 0;    
+}
+
+.footer .box-container .box a{
+    display: block;
+    font-size: 1rem;
+    color:var(--light-color);
+    padding:1rem 0;
+    text-decoration: none;
+}
+
+.footer .box-container .box a i{
+    color:var(--blue);
+    padding-right: .5rem;
+}
+
+.footer .box-container .box a:hover i{
+    padding-right: 2rem;
+    
+}
+
+.footer .share{
+    padding:1rem 0;
+    text-align: center;
+}
+
+
+.footer .share a{
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    font-size: 1.5rem;
+    color:#fff;
+    background:var(--blue);
+    margin:0.3rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover{
+    background:var(--black);
+    text-decoration: none;
+}
+
+.footer .credit{
+    border-top: var(--border);
+    margin-top: 2rem;
+    padding: 0 1rem;
+    padding-top: 2.5rem;
+    font-size: 1rem;
+    color:var(--light-color);
+    text-align: center;
+}
+
+.footer .credit span{
+    color:var(--green);
+}
+
 
 @media (max-width:991px){
     html{

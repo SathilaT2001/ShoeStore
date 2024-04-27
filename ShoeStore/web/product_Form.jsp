@@ -9,6 +9,102 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Product Form</title>
+        <%@include file="All_component/allcss.jsp"%>
+ <script>
+        function addSizeOption(selectElement, sizeValue) {
+            var option = document.createElement("option");
+            option.text = sizeValue;
+            option.value = sizeValue;
+            selectElement.appendChild(option);
+        }
+
+        function handleCategorySelection() {
+            var category = document.querySelector('input[name="category"]:checked');
+            if (category) {
+                var categoryValue = category.value;
+                var sizeSelect = document.getElementById("size");
+                sizeSelect.innerHTML = "";
+
+                if (categoryValue === 'kids') {
+                    addSizeOption(sizeSelect, "");
+                    addSizeOption(sizeSelect, "17");
+                    addSizeOption(sizeSelect, "20");
+                    addSizeOption(sizeSelect, "22");
+                    addSizeOption(sizeSelect, "24");
+                    addSizeOption(sizeSelect, "28");
+                    addSizeOption(sizeSelect, "32");
+                    addSizeOption(sizeSelect, "36");
+                } else if (categoryValue === 'men') {
+                    addSizeOption(sizeSelect, "");
+                    addSizeOption(sizeSelect, "38");
+                    addSizeOption(sizeSelect, "39");
+                    addSizeOption(sizeSelect, "40");
+                    addSizeOption(sizeSelect, "41");
+                    addSizeOption(sizeSelect, "42");
+                    addSizeOption(sizeSelect, "43");
+                    addSizeOption(sizeSelect, "44");
+                } else if (categoryValue === 'women') {
+                    addSizeOption(sizeSelect, "");
+                    addSizeOption(sizeSelect, "35");
+                    addSizeOption(sizeSelect, "36");
+                    addSizeOption(sizeSelect, "37");
+                    addSizeOption(sizeSelect, "38");
+                    addSizeOption(sizeSelect, "39");
+                    addSizeOption(sizeSelect, "40");
+                    addSizeOption(sizeSelect, "41");
+                }else if (categoryValue === 'new1') {
+                addSizeOption(sizeSelect, "");
+                addSizeOption(sizeSelect, "17");
+                addSizeOption(sizeSelect, "20");
+                addSizeOption(sizeSelect, "22");
+                addSizeOption(sizeSelect, "24");
+                addSizeOption(sizeSelect, "28");
+                addSizeOption(sizeSelect, "32");
+                addSizeOption(sizeSelect, "34");
+                addSizeOption(sizeSelect, "35");
+                addSizeOption(sizeSelect, "36");
+                addSizeOption(sizeSelect, "37");
+                addSizeOption(sizeSelect, "38");
+                addSizeOption(sizeSelect, "39");
+                addSizeOption(sizeSelect, "40");
+                addSizeOption(sizeSelect, "41");
+                addSizeOption(sizeSelect, "42");
+                addSizeOption(sizeSelect, "43");
+                addSizeOption(sizeSelect, "44");
+                addSizeOption(sizeSelect, "45");
+            }else if (categoryValue === 'sale') {
+               addSizeOption(sizeSelect, "");
+                addSizeOption(sizeSelect, "17");
+                addSizeOption(sizeSelect, "20");
+                addSizeOption(sizeSelect, "22");
+                addSizeOption(sizeSelect, "24");
+                addSizeOption(sizeSelect, "28");
+                addSizeOption(sizeSelect, "32");
+                addSizeOption(sizeSelect, "34");
+                addSizeOption(sizeSelect, "35");
+                addSizeOption(sizeSelect, "36");
+                addSizeOption(sizeSelect, "37");
+                addSizeOption(sizeSelect, "38");
+                addSizeOption(sizeSelect, "39");
+                addSizeOption(sizeSelect, "40");
+                addSizeOption(sizeSelect, "41");
+                addSizeOption(sizeSelect, "42");
+                addSizeOption(sizeSelect, "43");
+                addSizeOption(sizeSelect, "44");
+                addSizeOption(sizeSelect, "45");
+            }
+            }
+        }
+
+        function handleSizeSelection() {
+            var sizeSelect = document.getElementById("size");
+            var selectedSize = sizeSelect.options[sizeSelect.selectedIndex].value;
+            console.log("Selected size: " + selectedSize);
+        }
+    </script>
+
+        
      <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,7 +125,7 @@
             text-align: center;
             color: #333;
         }
-        form {
+        .formad {
             display: flex;
             flex-direction: column;
         }
@@ -65,10 +161,10 @@
         }
     </style>
 </head>
-<body>
+<body><%@include file="All_component/navbar.jsp"%>
     <div class="container">
         <h2>Add Product</h2>
-        <form action="addProduct" method="Post" enctype="multipart/form-data">
+        <form action="addProduct" method="Post" enctype="multipart/form-data" class="formad">
             <label for="id">ID:</label>
             <input type="text" id="id" name="id" required>
             
@@ -77,14 +173,22 @@
             
             <label for="category">Category:</label>
             <div>
-                <input type="radio" id="category_kids" name="category" value="kids" required>
+                <input type="radio" id="category_kids" name="category" value="kids" onclick="handleCategorySelection()" required>
                 <label for="category_kids">Kids</label>
                 
-                <input type="radio" id="category_men" name="category" value="men" required>
+                <input type="radio" id="category_men" name="category" value="men" onclick="handleCategorySelection()" required>
                 <label for="category_men">Men</label>
                 
-                <input type="radio" id="category_women" name="category" value="women" required>
+                <input type="radio" id="category_women" name="category" value="women" onclick="handleCategorySelection()" required>
                 <label for="category_women">Women</label>
+                
+                <input type="radio" id="category_new1" name="category" value="new1" onclick="handleCategorySelection()" required>
+                <label for="category_new1">New Arrivals</label>
+                
+                 <input type="radio" id="category_sale" name="category" value="sale" onclick="handleCategorySelection()" required>
+                <label for="category_sale">Sale</label>
+                
+                
             </div>
             
             <label for="description">Description:</label>
@@ -97,13 +201,8 @@
             <input type="text" id="quantity" name="quantity" required>
             
             <label for="size">Size:</label>
-            
-            
-            <select id="size" name="size" required>
-                 <option value=""> </option>
-                <option value="small">Small</option>
-                <option value="medium">Medium</option>
-                <option value="large">Large</option>
+            <select id="size" name="size" >
+                <option value="" onchange="handleCategorySelection()">Select Size</option>
             </select>
             <label><!-- comment --></label>
             <label for="image">Image:</label>
