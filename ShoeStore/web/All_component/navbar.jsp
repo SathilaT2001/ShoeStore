@@ -10,7 +10,7 @@
         </form>
         <div class="icons">
             
-            <a href="#" class="fas fa-shopping-cart"></a>
+            <a href="cart.jsp" class="fas fa-shopping-cart"></a><span class="cartcount" id="count">0</span></a>
             <a href="login.jsp" id="login-btn" class="fas fa-user"></a>
         </div>
     </div>
