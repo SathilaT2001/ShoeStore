@@ -1,25 +1,25 @@
 <%-- 
-    Document   : Men
-    Created on : Apr 18, 2024, 4:45:20 PM
+    Document   : Sale
+    Created on : Apr 20, 2024, 12:33:09 PM
     Author     : Asus
 --%>
 
-<%@page import="MA_package.MenProduct.ImageUtils"%>
-<%@page import="MA_package.MenProduct"%>
-<%@page import="MA_package.MenPro"%>
+<%@page import="MA_package.SaleProduct.ImageUtils"%>
+<%@page import="MA_package.SaleProduct"%>
 <%@page import="java.util.List"%>
+<%@page import="MA_package.SalePro"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <%
-    MenPro pd = new MenPro();
-    List<MenProduct> products = pd.getAllProducts();
+    SalePro pd = new SalePro();
+    List<SaleProduct> products = pd.getAllProducts();
 
 %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>ShoiNet Men</title>
-        <%@include file="All_component/allcss.jsp"%>
+        <title>JSP Page</title>
     <style>
     * {
         box-sizing: border-box;
@@ -159,7 +159,7 @@
 <div class="container">
     
     <% if (!products.isEmpty()) { %>
-        <% for (MenProduct p : products) { 
+        <% for (SaleProduct p : products) { 
         %>
             <div class="card">
                 <img class="card-img-top" src="data:image/jpeg;base64,<%= ImageUtils.blobToBase64(p.getImage()) %>" alt="Card image cap">
@@ -192,6 +192,4 @@
         <% } %>
     <% } %>
 </div>
-         <%@include file="All_component/footer.jsp"%>
-    </body>
 </html>

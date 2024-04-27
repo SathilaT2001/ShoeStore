@@ -1,26 +1,28 @@
 <%-- 
-    Document   : Men
-    Created on : Apr 18, 2024, 4:45:20 PM
+    Document   : New_Arrivels
+    Created on : Apr 20, 2024, 12:33:00 PM
     Author     : Asus
 --%>
 
-<%@page import="MA_package.MenProduct.ImageUtils"%>
-<%@page import="MA_package.MenProduct"%>
-<%@page import="MA_package.MenPro"%>
+<%@page import="MA_package.New_Arrivals_Product.ImageUtils"%>
+<%@page import="MA_package.New_Arrivals_Product"%>
+<%@page import="MA_package.New_Arrivals_Pro"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
 <%
-    MenPro pd = new MenPro();
-    List<MenProduct> products = pd.getAllProducts();
+    New_Arrivals_Pro pd = new New_Arrivals_Pro();
+    List<New_Arrivals_Product> products = pd.getAllProducts();
 
 %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>ShoiNet Men</title>
+        <title>ShoiNet New Arrivals</title>
         <%@include file="All_component/allcss.jsp"%>
-    <style>
+      <style>
     * {
         box-sizing: border-box;
     }
@@ -159,7 +161,7 @@
 <div class="container">
     
     <% if (!products.isEmpty()) { %>
-        <% for (MenProduct p : products) { 
+        <% for (New_Arrivals_Product p : products) { 
         %>
             <div class="card">
                 <img class="card-img-top" src="data:image/jpeg;base64,<%= ImageUtils.blobToBase64(p.getImage()) %>" alt="Card image cap">

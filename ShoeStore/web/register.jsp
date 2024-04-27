@@ -17,13 +17,13 @@
     <body style="background-color: #f0f1f2;">
         <%@include file="All_component/navbar.jsp"%>
         <div class="container p-2">
-         <div class="row">
-         <div class="col-md-4 oofset-md-4">
-             <div class="card">
-                 <div class="card-body">
-                     <h4 class="text-center"><b>Sign Up</h4></b>
+        <div class="row">
+        <div class="col-md-4 oofset-md-4">
+        <div class="card">
+        <div class="card-body">
+        <h4 class="text-center"><b>Sign Up</h4></b>
                      
-                            <form>
+<form>
                       
   <div class="form-group">
     <label for="exampleInputEmail1">Enter Full Name </label>
@@ -57,12 +57,12 @@
   </div>
                    
   <button type="submit" class="btn btn-primary">Submit</button>
-                     </form> 
-                 </div>
-            </div>
-        </div> 
-     </div>
-   </div>
+</form> 
+    </div>
+    </div>
+    </div> 
+    </div>
+    </div>
   
     </body>
 </html>
