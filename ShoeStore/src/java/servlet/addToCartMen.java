@@ -76,11 +76,14 @@ private static final long serialVersionUID = 1L;
             if (cart_list_men == null) {
                 cartListMen.add(cm);
                 session.setAttribute("cart-list-men", cartListMen);
-               response.sendRedirect("Men.jsp");
+               response.sendRedirect(" Men.jsp");
+               
             } else {
+               
                 cartListMen = cart_list_men;
 
                 boolean exist = false;
+                
                 for (MenProduct c : cart_list_men) {
                     if (c.getId().equals(id)) {
                         exist = true;

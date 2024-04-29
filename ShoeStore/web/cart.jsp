@@ -118,11 +118,11 @@ if (cart_list_new_arrivals != null) {
                     </thead>
                     <tbody>
 <%
-if (cart_list_kids != null || cart_list_men != null || cart_list_women != null || cart_list_sale != null  || cart_list_new_arrivals != null)  {
- if (cartProductkids != null) {
+
+ if (cart_list_kids != null) {
         for (KidsProduct c : cartProductkids ) {
 %> 
-            <tr>
+<tr>
                 <td><%= c.getName() %></td>
                 <td><%= c.getCategory() %></td>
                 <td><%= c.getPrice() %></td>
@@ -266,7 +266,7 @@ if ( cart_list_new_arrivals != null ) {
         }
     }
 
-}
+
 %>
                     </tbody>
                 </table>

@@ -60,22 +60,8 @@ private static final long serialVersionUID = 1L;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-       
-         response.setContentType("text/html;charset=UTF-8");
+     
+                 response.setContentType("text/html;charset=UTF-8");
         try(PrintWriter out = response.getWriter()){
             ArrayList<SaleProduct> cartListSale = new ArrayList<>();
             String id = request.getParameter("id");
@@ -108,6 +94,24 @@ private static final long serialVersionUID = 1L;
                 }
             }
         }
+        
+        
+        
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+       
+
         
     }
 
