@@ -1,19 +1,19 @@
 <%-- 
-    Document   : Women
-    Created on : Apr 18, 2024, 4:45:35 PM
+    Document   : New_Arrivels
+    Created on : Apr 20, 2024, 12:33:00 PM
     Author     : Asus
 --%>
 
-<%@page import="MA_package.WomenProduct.ImageUtils"%>
-<%@page import="MA_package.WomenProduct"%>
-<%@page import="MA_package.WomenPro"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.util.ArrayList"%>
+<%@page import="MA_package.New_Arrivals_Product.ImageUtils"%>
+<%@page import="MA_package.New_Arrivals_Product"%>
+<%@page import="MA_package.New_Arrivals_Pro"%>
 <%@page import="java.util.List"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 
 <%
-    WomenPro pd = new WomenPro();
-    List<WomenProduct> products = pd.getAllProducts();
+    New_Arrivals_Pro pd = new New_Arrivals_Pro();
+    List<New_Arrivals_Product> products = pd.getAllProducts();
 
 %>
 <!DOCTYPE html>
@@ -23,9 +23,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>ShoiNet Women</title>
+        <title>ShoiNet New Arrivals</title>
         <%@include file="All_component/allcss.jsp"%>
-        <style>
+      <style>
     * {
         box-sizing: border-box;
     }
@@ -164,7 +164,7 @@
 <div class="container">
     
     <% if (!products.isEmpty()) { %>
-        <% for (WomenProduct p : products) { 
+        <% for (New_Arrivals_Product p : products) { 
         %>
             <div class="card">
                 <img class="card-img-top" src="data:image/jpeg;base64,<%= ImageUtils.blobToBase64(p.getImage()) %>" alt="Card image cap">

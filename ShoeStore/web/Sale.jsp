@@ -1,19 +1,18 @@
 <%-- 
-    Document   : Women
-    Created on : Apr 18, 2024, 4:45:35 PM
+    Document   : Sale
+    Created on : Apr 20, 2024, 12:33:09 PM
     Author     : Asus
 --%>
 
-<%@page import="MA_package.WomenProduct.ImageUtils"%>
-<%@page import="MA_package.WomenProduct"%>
-<%@page import="MA_package.WomenPro"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.util.ArrayList"%>
+<%@page import="MA_package.SaleProduct.ImageUtils"%>
+<%@page import="MA_package.SaleProduct"%>
 <%@page import="java.util.List"%>
+<%@page import="MA_package.SalePro"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    WomenPro pd = new WomenPro();
-    List<WomenProduct> products = pd.getAllProducts();
+    SalePro pd = new SalePro();
+    List<SaleProduct> products = pd.getAllProducts();
 
 %>
 <!DOCTYPE html>
@@ -23,9 +22,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>ShoiNet Women</title>
-        <%@include file="All_component/allcss.jsp"%>
-        <style>
+        <title>JSP Page</title>
+    <style>
     * {
         box-sizing: border-box;
     }
@@ -164,7 +162,7 @@
 <div class="container">
     
     <% if (!products.isEmpty()) { %>
-        <% for (WomenProduct p : products) { 
+        <% for (SaleProduct p : products) { 
         %>
             <div class="card">
                 <img class="card-img-top" src="data:image/jpeg;base64,<%= ImageUtils.blobToBase64(p.getImage()) %>" alt="Card image cap">
@@ -197,6 +195,4 @@
         <% } %>
     <% } %>
 </div>
-         <%@include file="All_component/footer.jsp"%>
-    </body>
 </html>
