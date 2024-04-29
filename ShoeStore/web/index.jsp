@@ -80,6 +80,9 @@
         </div>
         
     </section>
-       
+       <footer>
+            <%@include file="All_component/footer.jsp" %>
+     </footer>   
+
     </body>
 </html>
