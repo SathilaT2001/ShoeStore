@@ -3,7 +3,22 @@
     Created on : Apr 27, 2024, 2:13:14 PM
     Author     : sathi
 --%>
+<%@page import="MA_package.KidsPro"%>
+<%@page import="java.util.List"%>
+<%@page import="MA_package.KidsProduct"%>
+<%@page import="java.util.ArrayList"%>
+<%
+ArrayList<KidsProduct> cart_list_kids = (ArrayList<KidsProduct>) session.getAttribute("cart-list-kids");
+List<KidsProduct> cartProductkids = null;
 
+
+if (cart_list_kids != null) {
+	KidsPro pDao = new KidsPro();
+	cartProductkids = pDao.getCartProducts(cart_list_kids);
+	request.setAttribute("cart_list_kids", cart_list_kids);
+}
+
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -50,10 +65,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>sniker</td>
-                            <td>men</td>
-                            <td>$45</td>
+<%
+if (cart_list_kids != null) {
+        for (KidsProduct c : cartProductkids) {
+%> 
+            <tr>
+                <td><%= c.getName() %></td>
+                <td><%= c.getCategory() %></td>
+                <td><%= c.getPrice() %></td>
                             <td>
                                 <form method="post" class="from-inline" action="">
                                     <input type="hidden" name="id" value="1" class="form-input">
@@ -69,6 +88,11 @@
                             </td>
                             <td><a href=""><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                         </tr>
+                        <%
+        }
+    }
+
+%>
                     </tbody>
                 </table>
                 
