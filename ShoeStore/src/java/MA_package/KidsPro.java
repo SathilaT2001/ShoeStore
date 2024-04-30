@@ -39,14 +39,47 @@ public class KidsPro {
                 row.setName(rs.getString("name"));
                 row.setCategory(rs.getString("category"));
                 row.setDescription(rs.getString("description"));
-                row.setPrice(rs.getString("price"));
-                row.setQuantity(rs.getString("quantity"));
+                 row.setPrice(rs.getFloat("price"));
+                row.setQuantity(rs.getInt("quantity"));
                 row.setSize(rs.getString("size"));
                 row.setImage(rs.getBlob("image"));
                 products.add(row);
             }
 
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return products;
+    }
+        
+        
+        public List<KidsProduct> getCartProducts(ArrayList<KidsProduct> cartListKids) {
+                 DBConnection db = new DBConnection();
+                  db.connectToDB();
+                     this.conn = db.getConnection(); 
+        List<KidsProduct> products = new ArrayList<>();
+        try {
+            
+                for (KidsProduct item : cartListKids) {
+                    query = "select * from kids_products where id=?";
+                    pst = this.conn.prepareStatement(query);
+                    pst.setString(1, item.getId());
+                    rs = pst.executeQuery();
+                    while (rs.next()) {
+                        KidsProduct row = new KidsProduct();
+                        row.setId(rs.getString("id"));
+                        row.setName(rs.getString("name"));
+                        row.setCategory(rs.getString("category"));
+                        row.setPrice(rs.getFloat("price")*item.getQuantity());
+                        
+                        products.add(row);
+                    }
+
+                
+            }
+
+        } catch (SQLException e) {
+           
             System.out.println(e.getMessage());
         }
         return products;
