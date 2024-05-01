@@ -17,10 +17,12 @@
     
     <div class="hedder-2">
         <nav class="navbar1">
-            <a href="#Men">Men</a>
-            <a href="#Women">Women</a>
-            <a href="#Kids">Kids</a>
-            <a href="#New Arrival">New Arrival</a>
+            <a href="index.jsp">Home</a>
+            <a href="Men.jsp">Men</a>
+            <a href="Women.jsp">Women</a>
+            <a href="Kids.jsp">Kids</a>
+            <a href="New_Arrival.jsp">New Arrival</a>
+            <a href="contactus.jsp">Contact Us</a>
         </nav>
     </div>
     
@@ -29,16 +31,11 @@
  <!-- bottom navbar -->
  
  <nav class="bottom-navbar1">
-<<<<<<< Updated upstream
-            <a href="#Men">Men</a>
-            <a href="#Women">Women</a>
-            <a href="#Kids">Kids</a>
-            <a href="#New Arrival">New Arrival</a>
-        </nav>
-=======
+            <a href="index.jsp">Home</a>
             <a href="Men.jsp">Men</a>
             <a href="Women.jsp">Women</a>
             <a href="Kids.jsp">Kids</a>
-            <a href="New_Arrival.jsp">Contact us</a>
+            <a href="New_Arrival.jsp">New Arrival</a>
+            <a href="contactus.jsp">Contact Us</a>
         </nav>
->>>>>>> Stashed changes
+
