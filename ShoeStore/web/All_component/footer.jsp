@@ -27,6 +27,7 @@
                     <a href="Women.jsp"> <i class="fas fa-arrow-right"></i> women </a>
                     <a href="Kids.jsp"> <i class="fas fa-arrow-right"></i> kids </a>
                     <a href="New_Arrival.jsp"> <i class="fas fa-arrow-right"></i> new arrival </a>
+                    <a href="contactus.jsp"><i class="fas fa-arrow-right"></i>Contact Us</a>
 
                 </div>
                 
