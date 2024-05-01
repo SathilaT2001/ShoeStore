@@ -1,1 +1,0 @@
-SELECT * FROM shoe_store.user;
