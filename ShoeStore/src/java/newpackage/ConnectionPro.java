@@ -11,7 +11,9 @@ public class ConnectionPro {
     
     public static Connection getConnection(){
         try{
+
             Class.forName("com.mysql.jdbc.Driver");
+
             con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shoe_store","root","");
             
         }catch(Exception e){
