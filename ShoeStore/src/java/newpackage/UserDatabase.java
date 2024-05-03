@@ -32,6 +32,7 @@ public class UserDatabase {
         }
         return set;
     }
+
     
     //login user
     public User logUser(String email, String pass ){
@@ -57,4 +58,5 @@ public class UserDatabase {
         }
         return user;
     }
+
 }
