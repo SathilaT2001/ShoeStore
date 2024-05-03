@@ -11,12 +11,9 @@
         <title>TO DO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
        
         <%@include file="All_component/allcss.jsp" %>
-         
-        
-        
+     
     </head>
     <body class="body-change">
         <%@include file="All_component/navbar.jsp" %>
@@ -40,7 +37,7 @@
 
             <div class="shoe-slider">
                 <div class="wraper">
-                <a href="#"><img src="img/1.jpeg"  alt="" class="cpic"></a>
+                <a href="Sale.jsp"><img src="img/1.jpeg"  alt="" class="cpic"></a>
                 <a href="#"><img src="img/2.jpeg"  alt="" class="cpic"></a>
                 <a href="#"><img src="img/3.jpeg"  alt="" class="cpic"></a>
                 <a href="#"><img src="img/4.jpeg"  alt="" class="cpic"></a>
@@ -77,8 +74,7 @@
             <i class="fas fa-headset"></i>
             <h4>24/7 support</h4>
             <p class="ppp">call us anytime</p>
-        </div>
-        
+        </div>       
     </section>
        <footer>
             <%@include file="All_component/footer.jsp" %>
