@@ -39,14 +39,51 @@ public class New_Arrivals_Pro {
                 row.setName(rs.getString("name"));
                 row.setCategory(rs.getString("category"));
                 row.setDescription(rs.getString("description"));
-                row.setPrice(rs.getString("price"));
-                row.setQuantity(rs.getString("quantity"));
+                 row.setPrice(rs.getFloat("price"));
+                row.setQuantity(rs.getInt("quantity"));
                 row.setSize(rs.getString("size"));
                 row.setImage(rs.getBlob("image"));
                 products.add(row);
             }
 
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return products;
+    }
+        
+        
+        
+        
+        
+             
+        public List<New_Arrivals_Product> getCartProducts(ArrayList<New_Arrivals_Product> cartListNewArrivals) {
+                 DBConnection db = new DBConnection();
+                  db.connectToDB();
+                     this.conn = db.getConnection(); 
+        List<New_Arrivals_Product> products = new ArrayList<>();
+        try {
+            
+                for (New_Arrivals_Product item : cartListNewArrivals) {
+                    query = "select * from new_products where id=?";
+                    pst = this.conn.prepareStatement(query);
+                    pst.setString(1, item.getId());
+                    rs = pst.executeQuery();
+                    while (rs.next()) {
+                        New_Arrivals_Product row = new New_Arrivals_Product();
+                        row.setId(rs.getString("id"));
+                        row.setName(rs.getString("name"));
+                        row.setCategory(rs.getString("category"));
+                        row.setPrice(rs.getFloat("price")*item.getQuantity());
+                        
+                        products.add(row);
+                    }
+
+                
+            }
+
+        } catch (SQLException e) {
+           
             System.out.println(e.getMessage());
         }
         return products;

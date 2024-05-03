@@ -18,9 +18,9 @@ public class SaleProduct {
       private String id;
 	private String name;
 	private String category;
-	private String price;
+	private float price;
 	private Blob image;
-        private String quantity;
+        private int quantity;
         private String size;
         private String description;
 	
@@ -29,7 +29,7 @@ public class SaleProduct {
 	}
 
 	
-	public SaleProduct(String id, String name, String category, String description, String price,String quantity, String size, Blob image) {
+	public SaleProduct(String id, String name, String category, String description, float price,int quantity, String size, Blob image) {
 		
 		this.id = id;
 		this.name = name;
@@ -74,18 +74,18 @@ public class SaleProduct {
 		return description;
 	}
 
-	public String getPrice() {
+	public float getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(float price) {
 		this.price = price;
 	}
-        public String getQuantity() {
+        public int getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(String quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity=quantity;
 	}
         

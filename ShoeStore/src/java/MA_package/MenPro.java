@@ -39,8 +39,8 @@ public class MenPro {
                 row.setName(rs.getString("name"));
                 row.setCategory(rs.getString("category"));
                 row.setDescription(rs.getString("description"));
-                row.setPrice(rs.getString("price"));
-                row.setQuantity(rs.getString("quantity"));
+                  row.setPrice(rs.getFloat("price"));
+                row.setQuantity(rs.getInt("quantity"));
                 row.setSize(rs.getString("size"));
                 row.setImage(rs.getBlob("image"));
                 products.add(row);
@@ -51,4 +51,40 @@ public class MenPro {
         }
         return products;
     }
+        
+        
+        
+             
+        public List<MenProduct> getCartProducts(ArrayList<MenProduct> cartListMen) {
+                 DBConnection db = new DBConnection();
+                  db.connectToDB();
+                     this.conn = db.getConnection(); 
+        List<MenProduct> products = new ArrayList<>();
+        try {
+            
+                for (MenProduct item : cartListMen) {
+                    query = "select * from men_products where id=?";
+                    pst = this.conn.prepareStatement(query);
+                    pst.setString(1, item.getId());
+                    rs = pst.executeQuery();
+                    while (rs.next()) {
+                        MenProduct row = new MenProduct();
+                        row.setId(rs.getString("id"));
+                        row.setName(rs.getString("name"));
+                        row.setCategory(rs.getString("category"));
+                        row.setPrice(rs.getFloat("price")*item.getQuantity());
+                        
+                        products.add(row);
+                    }
+
+                
+            }
+
+        } catch (SQLException e) {
+           
+            System.out.println(e.getMessage());
+        }
+        return products;
+    }
+        
 }
