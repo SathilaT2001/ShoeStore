@@ -19,7 +19,7 @@
             
             <div class="box-container">
                 
-                <div class="box"
+                <div class="box">
 
                  <h3>quick links</h3>
                     <a href="index.jsp"> <i class="fas fa-arrow-right"></i> home </a>
@@ -30,7 +30,7 @@
 
                 </div>
                 
-                <div class="box"
+                <div class="box">
                     <p class="footerh3">contact info</p>
                     <a href="#"> <i class="fas fa-phone"></i> +9477245389 </a>
                     <a href="#"> <i class="fas fa-phone"></i> +9471154876</a>
