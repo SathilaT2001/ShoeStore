@@ -6,6 +6,9 @@ package hi_package;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -71,7 +74,18 @@ public class contact extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       // processRequest(request, response);
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String message = request.getParameter("message");
+
+        insertcontacts cn = new insertcontacts();
+        try {
+            cn.insertContacts(name, email, message);
+            response.sendRedirect("contactUs.jsp");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
