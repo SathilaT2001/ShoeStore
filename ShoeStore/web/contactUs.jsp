@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact us Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
-    <style type="text/css">
+<style type="text/css">
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght;300;400;500;600;700;900&display=swap');
 
         *
@@ -169,7 +169,7 @@
                 width:100%;
             }
         }
-    </style>  
+    </style>   
 </head>
 <body> 
     <section class="contact">
@@ -217,7 +217,7 @@
                         <span>Type Your Message...</span> 
                     </div>
                     <div class="input box"> 
-                        <input type="submit" name="Send" value="Send"> 
+                        <input type="submit" name="" value="Send"> 
                     </div>
                 </form>
             </div>

@@ -75,17 +75,17 @@ public class contact extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        // processRequest(request, response);
-        String name = request.getParameter("name");
+    String name = request.getParameter("name");
         String email = request.getParameter("email");
         String message = request.getParameter("message");
 
         insertcontacts cn = new insertcontacts();
         try {
-            cn.insertContacts(name, email, message);
-            response.sendRedirect("contactUs.jsp");
+            cn.insertcontacts(name, email, message);
+            response.sendRedirect("index.jsp");
         } catch (SQLException e) {
             e.printStackTrace();
-        }
+        } 
     }
 
     /**

@@ -14,12 +14,12 @@ import java.sql.SQLException;
  * @author Nirmani
  */
 public class insertcontacts {
- Connection con;
+Connection con;
 
-    public void insertContacts(String name, String email, String message) throws SQLException {
+    public void insertcontacts(String name, String email, String message) throws SQLException {
         DBConnection db = new DBConnection();
         db.connectToDB();
-        con = db.getConnection(); // Assign the connection obtained from DBConnection
+        con = db.getConnection(); 
 
         String query = "INSERT INTO contact (name, email, message) VALUES (?, ?, ?)";
         PreparedStatement statement = con.prepareStatement(query);
