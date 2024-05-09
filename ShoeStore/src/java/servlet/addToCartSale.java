@@ -76,7 +76,7 @@ private static final long serialVersionUID = 1L;
             if (cart_list_sale == null) {
                 cartListSale.add(cm);
                 session.setAttribute("cart-list-sale", cartListSale);
-               response.sendRedirect("Sale.jsp");
+               response.sendRedirect("index.jsp");
             } else {
                 cartListSale = cart_list_sale;
 
@@ -90,7 +90,7 @@ private static final long serialVersionUID = 1L;
 
                 if (!exist) {
                     cartListSale.add(cm);
-                    response.sendRedirect("Sale.jsp");
+                    response.sendRedirect("index.jsp");
                 }
             }
         }

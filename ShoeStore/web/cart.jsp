@@ -3,6 +3,8 @@
     Created on : Apr 27, 2024, 2:13:14 PM
     Author     : sathi
 --%>
+
+<%@page import="java.util.Iterator"%>
 <%@page import="MA_package.New_Arrivals_Pro"%>
 <%@page import="MA_package.SalePro"%>
 <%@page import="MA_package.WomenPro"%>
@@ -15,6 +17,8 @@
 <%@page import="java.util.List"%>
 <%@page import="MA_package.KidsProduct"%>
 <%@page import="java.util.ArrayList"%>
+
+<%! double all_total = 0;%>
 
 <%
     ArrayList<KidsProduct> cart_list_kids = (ArrayList<KidsProduct>) session.getAttribute("cart-list-kids");
@@ -71,6 +75,59 @@
         request.setAttribute("total", total);
     }
 
+    double totalPrice = 0.0;
+
+// For MenPro
+    ArrayList<MenProduct> cartListMen = (ArrayList<MenProduct>) session.getAttribute("cart-list-men");
+    if (cartListMen != null) {
+        MenPro menPro = new MenPro();
+        List<MenProduct> cartProductsMen = menPro.getCartProducts(cartListMen);
+        for (MenProduct product : cartProductsMen) {
+            totalPrice += product.getPrice(); // Since product.getPrice() already reflects total price
+        }
+    }
+
+// For KidsPro
+    ArrayList<KidsProduct> cartListKids = (ArrayList<KidsProduct>) session.getAttribute("cart-list-kids");
+    if (cartListKids != null) {
+        KidsPro kidsPro = new KidsPro();
+        List<KidsProduct> cartProductsKids = kidsPro.getCartProducts(cartListKids);
+        for (KidsProduct product : cartProductsKids) {
+            totalPrice += product.getPrice(); // Since product.getPrice() already reflects total price
+        }
+    }
+
+// For SalePro
+    ArrayList<SaleProduct> cartListSale = (ArrayList<SaleProduct>) session.getAttribute("cart-list-sale");
+    if (cartListSale != null) {
+        SalePro salePro = new SalePro();
+        List<SaleProduct> cartProductsSale = salePro.getCartProducts(cartListSale);
+        for (SaleProduct product : cartProductsSale) {
+            totalPrice += product.getPrice(); // Since product.getPrice() already reflects total price
+        }
+    }
+
+// For WomenPro
+    ArrayList<WomenProduct> cartListWomen = (ArrayList<WomenProduct>) session.getAttribute("cart-list-women");
+    if (cartListWomen != null) {
+        WomenPro womenPro = new WomenPro();
+        List<WomenProduct> cartProductsWomen = womenPro.getCartProducts(cartListWomen);
+        for (WomenProduct product : cartProductsWomen) {
+            totalPrice += product.getPrice(); // Since product.getPrice() already reflects total price
+        }
+    }
+
+// For New_Arrivals_Pro
+    ArrayList<New_Arrivals_Product> cartListNewArrivals = (ArrayList<New_Arrivals_Product>) session.getAttribute("cart-list-new-arrivals");
+    if (cartListNewArrivals != null) {
+        New_Arrivals_Pro newArrivalsPro = new New_Arrivals_Pro();
+        List<New_Arrivals_Product> cartProductsNewArrivals = newArrivalsPro.getCartProducts(cartListNewArrivals);
+        for (New_Arrivals_Product product : cartProductsNewArrivals) {
+            totalPrice += product.getPrice(); // Since product.getPrice() already reflects total price
+        }
+    }
+
+    all_total = totalPrice;
 
 %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -109,8 +166,9 @@
     <body class="body-change">
         <%@include file="All_component/navbar.jsp" %>
 
+
         <div class="container">
-            <div class="d-flex py-3"><h3>Total Price : $ ${ (total>0)?total:0 }</h3><a href="#" class="mx-3 btn btn-primary">Check Out</a></div>
+            <div class="d-flex py-3"><h3>Total Price : $<%= String.format("%.2f", all_total)%></h3><a href="#" class="mx-3 btn btn-primary">Check Out</a></div>
 
             <table class="table table-loght">
                 <thead>
@@ -124,6 +182,7 @@
                     </tr>
                 </thead>
                 <tbody>
+
                     <%    if (cart_list_kids != null) {
                             for (KidsProduct c : cartProductkids) {
                     %> 
@@ -144,7 +203,7 @@
                                 </div>
                             </form>
                         </td>
-                        <td><a href=""><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                        <td><a href="RemoveFromCartServlet?id=<%=c.getId()%>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                     </tr>
 
 
@@ -264,7 +323,8 @@
                                 </div>
                             </form>
                         </td>
-                        <td><a href=""><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                        <td><a href="RemoveFromCartServlet?id=<%=c.getId()%>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+
                     </tr>   
 
                     <%
@@ -272,6 +332,8 @@
                         }
 
                     %>
+
+
                 </tbody>
             </table>
 

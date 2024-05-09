@@ -87,6 +87,7 @@ public class MenPro {
         return products;
     }
         
+
         public float getTotalCartPrice(ArrayList<MenProduct> cartListMen) {
     float sum = 0;
 
@@ -109,5 +110,6 @@ public class MenPro {
 
     return sum;
 }
+
         
 }

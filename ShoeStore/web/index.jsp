@@ -3,17 +3,22 @@
     Created on : Apr 9, 2024, 9:53:15 AM
     Author     : sathi
 --%>
-
+<%@page import="java.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>TO DO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       
+
+      
         <%@include file="All_component/allcss.jsp" %>
-     
+       
+        
+        
     </head>
     <body class="body-change">
         <%@include file="All_component/navbar.jsp" %>
@@ -48,6 +53,8 @@
             </div>
     </section>
         
+    
+    <%@include file="Sale.jsp" %>
     <!-- Icons -->
     
     <section class="icons-container1">
