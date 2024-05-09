@@ -158,7 +158,27 @@
 
             .container{
                 margin-top: 7rem;
+            }.button1{
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.25rem;
+                width: 15%;
+                background-color: orange;
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: #fff;
+                text-wrap: nowrap;
+                border-radius: 0.5rem;
+                box-shadow: inset 0 0 0.25rem 1px #d9d9d9;
             }
+            
+            .button1:hover{
+                background: yellow;
+                text-decoration: none;
+            }
+            
         </style>
 
 
@@ -168,7 +188,7 @@
 
 
         <div class="container">
-            <div class="d-flex py-3"><h3>Total Price : $<%= String.format("%.2f", all_total)%></h3><a href="#" class="mx-3 btn btn-primary">Check Out</a></div>
+            <div class="d-flex py-3"><h3>Total Price : $<%= String.format("%.2f", all_total)%></h3><a href="checkout.jsp" class="mx-3 button1">Check Out</a></div>
 
             <table class="table table-loght">
                 <thead>
