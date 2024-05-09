@@ -88,4 +88,31 @@ public class New_Arrivals_Pro {
         }
         return products;
     }
+        
+    public float getTotalCartPrice(ArrayList<New_Arrivals_Product> cartListNewArrivals) {
+    float sum = 0;
+
+    try {
+        // Check if there are items in the cart
+        if (cartListNewArrivals.size() > 0) {
+            for (New_Arrivals_Product item : cartListNewArrivals) {
+                // Query the appropriate table for the price of items
+                query = "SELECT price FROM new_arrivals WHERE id=?";
+                pst = this.conn.prepareStatement(query);
+                pst.setString(1, item.getId());
+                rs = pst.executeQuery();
+
+                while (rs.next()) {
+                    // Calculate the total price considering quantity
+                    sum += rs.getFloat("price") * item.getQuantity();
+                }
+            }
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return sum;
+}
+
 }

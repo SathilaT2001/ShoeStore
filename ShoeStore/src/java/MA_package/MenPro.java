@@ -87,4 +87,29 @@ public class MenPro {
         return products;
     }
         
+
+        public float getTotalCartPrice(ArrayList<MenProduct> cartListMen) {
+    float sum = 0;
+
+    try {
+        if (cartListMen.size() > 0) {
+            for (MenProduct item : cartListMen) {
+                query = "select price from men_products where id=?";
+                pst = this.conn.prepareStatement(query);
+                pst.setString(1, item.getId());
+                rs = pst.executeQuery();
+
+                while (rs.next()) {
+                    sum += rs.getFloat("price") * item.getQuantity();
+                }
+            }
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return sum;
+}
+
+        
 }
