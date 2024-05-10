@@ -70,7 +70,7 @@
     <br>
 <div class="container">
     <div class="card">
-        <a href="add-shoes.jsp">
+        <a href="product_Form.jsp">
             <div class="card-body text-center">
                 <i class="fas fa-plus-square text-primary"></i>
                 <h4>ADD SHOES</h4>
@@ -79,7 +79,7 @@
     </div>
 
     <div class="card">
-        <a href="collection.jsp">
+        <a href="Admin_Allbooks">
             <div class="card-body text-center">
                 <i class="fas fa-layer-group text-danger"></i>
                 <h4>COLLECTION</h4>
