@@ -188,7 +188,7 @@
 
 
         <div class="container">
-            <div class="d-flex py-3"><h3>Total Price : $<%= String.format("%.2f", all_total)%></h3><a href="checkout.jsp" class="mx-3 button1">Check Out</a></div>
+            <div class="d-flex py-3"><h3>Total Price : $<%= String.format("%.2f", all_total)%></h3><a href="OrderForm.jsp" class="mx-3 button1">Check Out</a></div>
 
             <table class="table table-loght">
                 <thead>

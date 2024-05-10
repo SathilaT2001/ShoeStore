@@ -10,8 +10,10 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact us Page</title>
+        <%@include file="All_component/allcss.jsp"%>
+        
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css" integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
-<style type="text/css">
+    <style type="text/css">
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght;300;400;500;600;700;900&display=swap');
 
         *
@@ -31,7 +33,7 @@
             justify-content:center;
             align-items:center;
             flex-direction:column;
-            background: url(bg.jpg);
+            background: url(img/bg.jpeg);
             background-size: cover;
         }
         .contact .content
@@ -43,12 +45,12 @@
         {
             font-size:36px;
             font-weight:500;
-            color:#fff;
+            color:white;
         }
         .contact .content p
         {
             font-weight:300;
-            color:#fff;
+            color:white;
         }
         .container
         {
@@ -63,24 +65,30 @@
             width:50%;
             display:flex;
             flex-direction:column;
+            
+        }
+        
+        .box{
+            padding-top: 1rem;
         }
         .container .contactInfo .box .icon
         {
-            min-width:60px;
-            height:60px;
+            width:40px;
+            height:40px;
             background:#fff;
             display:flex;
             justify-content:center;
             align-items:center;
             border-radius:50px;
             font-size:22px;
+            
         }
         .container .contactInfo .box .text
         {
             display:flex;
             margin-left:20px;
             font-size:16px;
-            color:#fff;
+            color:white;
             flex-direction:column;
             font-weight:300;
         }
@@ -94,6 +102,7 @@
             width:50%;
             padding:40px;
             background:#fff;
+            
         }
         .contactForm h2
         {
@@ -149,6 +158,9 @@
             padding:10px;
             font-size:18px;
         }
+        .btn{
+            font-size: 1.3rem;
+        }
         @media (max-width:991px)
         {
             .contact
@@ -172,10 +184,11 @@
     </style>   
 </head>
 <body> 
+    <%@include file="All_component/navbar.jsp"%>
     <section class="contact">
         <div class="content">
             <h2>Contact Us</h2>
-            <p>Type here</p>
+            
         </div>
         <div class="container">
             <div class="contactInfo">
@@ -194,7 +207,7 @@
                     </div>
                 </div>
                 <div class="box">
-                    <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                    <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
                     <div class="text">
                         <h3>Email</h3>
                         <p>shoestore@gmail.com</p>
@@ -217,11 +230,14 @@
                         <span>Type Your Message...</span> 
                     </div>
                     <div class="input box"> 
-                        <input type="submit" name="" value="Send"> 
+                        <input class="btn btn-block btn-success submit-button" type="submit" name="" value="Send"> 
                     </div>
                 </form>
             </div>
         </div>
     </section>
+    <footer>
+            <%@include file="All_component/footer.jsp" %>
+        </footer> 
 </body>
 </html>
