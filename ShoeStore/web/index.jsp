@@ -81,6 +81,9 @@
         </div>
         
     </section>
+    
+     <%@include file="Sale.jsp"%>
+    
        <footer>
             <%@include file="All_component/footer.jsp" %>
      </footer>   
