@@ -19,16 +19,19 @@
             
             <div class="box-container">
                 
-                <div class="box"
-                 <p class="footerh3">quick links</p>
-                    <a href="#"> <i class="fas fa-arrow-right"></i> home </a>
-                    <a href="#"> <i class="fas fa-arrow-right"></i> men </a>
-                    <a href="#"> <i class="fas fa-arrow-right"></i> women </a>
-                    <a href="#"> <i class="fas fa-arrow-right"></i> kids </a>
-                    
+                <div class="box">
+
+                 <h3>quick links</h3>
+                    <a href="index.jsp"> <i class="fas fa-arrow-right"></i> home </a>
+                    <a href="Men.jsp"> <i class="fas fa-arrow-right"></i> men </a>
+                    <a href="Women.jsp"> <i class="fas fa-arrow-right"></i> women </a>
+                    <a href="Kids.jsp"> <i class="fas fa-arrow-right"></i> kids </a>
+                    <a href="New_Arrival.jsp"> <i class="fas fa-arrow-right"></i> new arrival </a>
+                    <a href="contactus.jsp"><i class="fas fa-arrow-right"></i>Contact Us</a>
+
                 </div>
                 
-                <div class="box"
+                <div class="box">
                     <p class="footerh3">contact info</p>
                     <a href="#"> <i class="fas fa-phone"></i> +9477245389 </a>
                     <a href="#"> <i class="fas fa-phone"></i> +9471154876</a>

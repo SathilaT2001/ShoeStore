@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+  
 <!DOCTYPE html>
 <html>
     <head>
@@ -80,6 +81,9 @@
         </div>
         
     </section>
+    
+     <%@include file="Sale.jsp"%>
+    
        <footer>
             <%@include file="All_component/footer.jsp" %>
      </footer>   

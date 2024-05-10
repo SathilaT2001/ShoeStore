@@ -1,23 +1,23 @@
 <%-- 
-    Document   : Women
-    Created on : Apr 18, 2024, 4:45:35 PM
+    Document   : New_Arrivels
+    Created on : Apr 20, 2024, 12:33:00 PM
     Author     : Asus
 --%>
 
-<%@page import="MA_package.WomenProduct.ImageUtils"%>
-<%@page import="MA_package.WomenProduct"%>
-<%@page import="MA_package.WomenPro"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="MA_package.New_Arrivals_Product.ImageUtils"%>
+<%@page import="MA_package.New_Arrivals_Product"%>
+<%@page import="MA_package.New_Arrivals_Pro"%>
 <%@page import="java.util.List"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 
 <%
-    WomenPro pd = new WomenPro();
-    List<WomenProduct> products = pd.getAllProducts();
-ArrayList<WomenProduct> cart_list_women= (ArrayList<WomenProduct>) session.getAttribute("cart-list-women");
-
-if (cart_list_women != null) {
-	request.setAttribute("cart_list_women", cart_list_women);
+    New_Arrivals_Pro pd = new New_Arrivals_Pro();
+    List<New_Arrivals_Product> products = pd.getAllProducts();
+ArrayList<New_Arrivals_Product> cart_list_new_arrivals = (ArrayList<New_Arrivals_Product>) session.getAttribute("cart-list-new-arrivals");
+if (cart_list_new_arrivals != null) {
+	request.setAttribute("cart_list_new_arrivals", cart_list_new_arrivals);
 }
 %>
 <!DOCTYPE html>
@@ -27,9 +27,9 @@ if (cart_list_women != null) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>ShoiNet Women</title>
+        <title>ShoiNet New Arrivals</title>
         <%@include file="All_component/allcss.jsp"%>
-        <style>
+      <style>
             * {
                 box-sizing: border-box;
             }
@@ -170,11 +170,11 @@ if (cart_list_women != null) {
     </head>
     <body>
          <%@include file="All_component/navbar.jsp"%>
-     <form action="${pageContext.request.contextPath}/addToCartWomen" method="GET" enctype="multipart/form-data">          
+          <form action="${pageContext.request.contextPath}/addToCartNewArrivals" method="GET" enctype="multipart/form-data">       
 <div class="container">
     
     <% if (!products.isEmpty()) { %>
-        <% for (WomenProduct p : products) { 
+        <% for (New_Arrivals_Product p : products) { 
         %>
             <div class="card">
                 <img class="card-img-top" src="data:image/jpeg;base64,<%= ImageUtils.blobToBase64(p.getImage()) %>" alt="Card image cap">
@@ -193,7 +193,7 @@ if (cart_list_women != null) {
                         <tr>
                             <td class="price"> $<%= p.getPrice() %> &nbsp;</td>
                             <td>                                  
-                                 <a href="addToCartWomen?id=<%= p.getId() %>" class="cart-button">
+                                <a href="addToCartNewArrivals?id=<%= p.getId() %>" class="cart-button">
                                     <svg class="cart-icon" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" stroke-linejoin="round" stroke-linecap="round"></path>
                                     </svg>

@@ -1,14 +1,20 @@
+<%-- 
+    Document   : register
+    Created on : Apr 20, 2024, 10:38:13 AM
+    Author     : Dell Latitude 7290
+--%>
+
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
-
-
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>ShoeNet:login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ShoiNet</title>
         <%@include file="All_component/allcss.jsp"%>
-        
+
         <style>
             /* Import Google font - Poppins */
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -105,33 +111,32 @@
         </style>
 
     </head>
-    <body  >
-         <%@include file="All_component/navbar.jsp"%>
-         
-         <div class="container">
-             <div class="login form">
-             <div class="box">
-                 
-                <header>Login</header>
-                 <form action="LoginServlet" method="post">
-                     
-                     <input type="text"placeholder="Username" name="email" required>
-                     
-                     <input type="password" placeholder="password" name="password" required>
-                     <input type="submit" value="Login" class="button">
-                     
-                     <a href="registeration.jsp">Create New Account</a>
-                 </form>
-             </div>
-         </div>    
+    <body>
+        <%@include file="All_component/navbar.jsp"%>
 
-         
-    
+
+
+        <div class="container">
+            <input type="checkbox" id="check">
+
+            <div class="login form">
+                <header>Signup</header>
+                <form action="RegisterServlet" method="post">
+                    <input type="text" placeholder="Enter your Name" name="name">
+                    <input type="email" placeholder="Enter your email" name="email">
+                    <input type="password" placeholder="Enter your password" name="password">
+                    <input type="submit" class="button" value="Register">
+                </form>
+                <div class="signup">
+                    <span class="signup">Already have an account?
+                        <a href="login.jsp">Login</a>
+
+                    </span>
+                </div>
+            </div>
+        </div>
+
 
     </body>
-<<<<<<< Updated upstream
 </html>
-=======
 
-</html>
->>>>>>> Stashed changes

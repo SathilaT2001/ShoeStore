@@ -207,31 +207,23 @@ section{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap:1.5rem;
-    
-    
+    gap:1.5rem;    
 }
-
-
 
 .home .row .content{
     flex: 1 1 42rem;
-    margin-top: 2.6rem;
-    
+    margin-top: 2.6rem; 
 }
 
 .home .row .shoe-slider{
     flex: 1 1 42rem;
     text-align: center;
-    margin-top: 1rem;
-    
+    margin-top: 1rem;   
 }
 
 .home .row .shoe-slider a img{
     height: 15rem;
-    width: 15rem;
-    
-    
+    width: 15rem;   
 }
 
 .home .row .shoe-slider a:hover img{
@@ -240,8 +232,7 @@ section{
 
 .home .row .shoe-slider  {
     width: 100%;
-    margin-top: -5rem;  
-    
+    margin-top: -5rem;   
 } 
 
 .home .row .content h3{
@@ -255,9 +246,6 @@ section{
     line-height: 2;
     padding: 1rem 0;
 }
-
-
-
 .wraper{
     display: grid;
     grid-auto-flow: column;
@@ -279,8 +267,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 .8rem 1rem rgba(0,0,0, 0.2);
-    
+    box-shadow: 0 .8rem 1rem rgba(0,0,0, 0.2);    
 }
 
 .icons-container1{
@@ -311,9 +298,6 @@ section{
     padding-bottom: .2rem;
     padding-top: 1rem;
 }
-
-
-
 .icons-container1 .iconss .ppp{
     font-size: 1.4rem;
     color: var(--light-color);
@@ -393,63 +377,44 @@ section{
     html{
         font-size: 55%
     }
-    
     .header .hedder-1{
         padding: 2rem;
-    }
-    
+    }   
     section{
     padding: 3rem 2rem;
-}
-
-    
+}  
 }
 
 @media (max-width:768px){
     .header .hedder-2{
-        display: none;
-        
+        display: none;     
     }
-    
     html{
         scroll-padding-top:0;
     }
-    
-   
-    
     .bottom-navbar1{
         display: block;
     }
-    
-    
-    
     .header .hedder-1{
         
         position: relative;
     }
-    
     .header .hedder-1 .search-form{
         position: absolute;
         top: -115%; right: 2rem;
         width: 90%;
         box-shadow: var(--box-shadow);
     }
-    
     .header .hedder-1 .search-form{
         top: 115%;
     }
-    
-    
-    
     .home .row .content h3{
         text-align: center;
     }
-    
     .home .row .content h3{
         font-size: 3.5rem;
     }
 }
-
 @media (max-width:450px){
     html{
         font-size: 50%
