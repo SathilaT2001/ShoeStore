@@ -48,7 +48,7 @@
                 <a href="#" class="fab fa-pinterest"></a> 
             </div>
             
-            <div class="credit"> created by <span>mr.web designer</span> | all rights reserved! </div>
+            <div class="credit"> created by <span>ShoiNet Group</span> | all rights reserved! </div>
         
         </section>
                 
