@@ -16,16 +16,16 @@ import java.util.List;
  * @author Asus
  */
 public class KidsPro {
+
     private Connection conn;
     private String query;
     private PreparedStatement pst;
     private ResultSet rs;
 
-
-	public List<KidsProduct> getAllProducts() {
-      DBConnection db = new DBConnection();
-      db.connectToDB();
-      this.conn = db.getConnection(); 
+    public List<KidsProduct> getAllProducts() {
+        DBConnection db = new DBConnection();
+        db.connectToDB();
+        this.conn = db.getConnection();
         List<KidsProduct> products = new ArrayList<>();
         try {
 
@@ -34,12 +34,12 @@ public class KidsPro {
             rs = pst.executeQuery();
 
             while (rs.next()) {
-            	KidsProduct row = new KidsProduct();
+                KidsProduct row = new KidsProduct();
                 row.setId(rs.getString("id"));
                 row.setName(rs.getString("name"));
                 row.setCategory(rs.getString("category"));
                 row.setDescription(rs.getString("description"));
-                 row.setPrice(rs.getFloat("price"));
+                row.setPrice(rs.getFloat("price"));
                 row.setQuantity(rs.getInt("quantity"));
                 row.setSize(rs.getString("size"));
                 row.setImage(rs.getBlob("image"));
@@ -51,37 +51,59 @@ public class KidsPro {
         }
         return products;
     }
-        
-        
-        public List<KidsProduct> getCartProducts(ArrayList<KidsProduct> cartListKids) {
-                 DBConnection db = new DBConnection();
-                  db.connectToDB();
-                     this.conn = db.getConnection(); 
+
+    public List<KidsProduct> getCartProducts(ArrayList<KidsProduct> cartListKids) {
+        DBConnection db = new DBConnection();
+        db.connectToDB();
+        this.conn = db.getConnection();
         List<KidsProduct> products = new ArrayList<>();
         try {
-            
-                for (KidsProduct item : cartListKids) {
-                    query = "select * from kids_products where id=?";
-                    pst = this.conn.prepareStatement(query);
-                    pst.setString(1, item.getId());
-                    rs = pst.executeQuery();
-                    while (rs.next()) {
-                        KidsProduct row = new KidsProduct();
-                        row.setId(rs.getString("id"));
-                        row.setName(rs.getString("name"));
-                        row.setCategory(rs.getString("category"));
-                        row.setPrice(rs.getFloat("price")*item.getQuantity());
-                        
-                        products.add(row);
-                    }
 
-                
+            for (KidsProduct item : cartListKids) {
+                query = "select * from kids_products where id=?";
+                pst = this.conn.prepareStatement(query);
+                pst.setString(1, item.getId());
+                rs = pst.executeQuery();
+                while (rs.next()) {
+                    KidsProduct row = new KidsProduct();
+                    row.setId(rs.getString("id"));
+                    row.setName(rs.getString("name"));
+                    row.setCategory(rs.getString("category"));
+                    row.setPrice(rs.getFloat("price") * item.getQuantity());
+
+                    products.add(row);
+                }
+
             }
 
         } catch (SQLException e) {
-           
+
             System.out.println(e.getMessage());
         }
         return products;
     }
+
+    public float getTotalCartPrice(ArrayList<KidsProduct> cartListKids) {
+    float sum = 0;
+
+    try {
+        if (cartListKids.size() > 0) {
+            for (KidsProduct item : cartListKids) {
+                query = "select price from kids_products where id=?";
+                pst = this.conn.prepareStatement(query);
+                pst.setString(1, item.getId());
+                rs = pst.executeQuery();
+
+                while (rs.next()) {
+                    sum += rs.getFloat("price") * item.getQuantity();
+                }
+            }
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return sum;
+}
+
 }

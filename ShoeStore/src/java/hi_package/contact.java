@@ -2,26 +2,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package servlet;
+package hi_package;
 
-import MA_package.SaleProduct;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Asus
+ * @author Nirmani
  */
-@WebServlet(name = "addToCartSale", urlPatterns = {"/addToCartSale"})
-public class addToCartSale extends HttpServlet {
-private static final long serialVersionUID = 1L;
+@WebServlet(name = "contact", urlPatterns = {"/contact"})
+public class contact extends HttpServlet {
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -39,10 +39,10 @@ private static final long serialVersionUID = 1L;
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet addToCartSale</title>");            
+            out.println("<title>Servlet contact</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet addToCartSale at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet contact at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -60,43 +60,7 @@ private static final long serialVersionUID = 1L;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-     
-                 response.setContentType("text/html;charset=UTF-8");
-        try(PrintWriter out = response.getWriter()){
-            ArrayList<SaleProduct> cartListSale = new ArrayList<>();
-            String id = request.getParameter("id");
-            SaleProduct cm = new SaleProduct();
-            if (id != null) {
-            cm.setId(id);
-            cm.setQuantity(1);
-            }
-            
-            HttpSession session = request.getSession();
-            ArrayList<SaleProduct> cart_list_sale = (ArrayList<SaleProduct>) session.getAttribute("cart-list-sale");
-            if (cart_list_sale == null) {
-                cartListSale.add(cm);
-                session.setAttribute("cart-list-sale", cartListSale);
-               response.sendRedirect("index.jsp");
-            } else {
-                cartListSale = cart_list_sale;
-
-                boolean exist = false;
-                for (SaleProduct c : cart_list_sale) {
-                    if (c.getId().equals(id)) {
-                        exist = true;
-                        out.println("<h3 style='color:crimson; text-align: center'>Item Already in Cart. <a href='cart.jsp'>GO to Cart Page</a></h3>");
-                    }
-                }
-
-                if (!exist) {
-                    cartListSale.add(cm);
-                    response.sendRedirect("index.jsp");
-                }
-            }
-        }
-        
-        
-        
+        processRequest(request, response);
     }
 
     /**
@@ -110,9 +74,18 @@ private static final long serialVersionUID = 1L;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+       // processRequest(request, response);
+    String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String message = request.getParameter("message");
 
-        
+        insertcontacts cn = new insertcontacts();
+        try {
+            cn.insertcontacts(name, email, message);
+            response.sendRedirect("index.jsp");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } 
     }
 
     /**

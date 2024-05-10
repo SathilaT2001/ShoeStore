@@ -4,7 +4,7 @@
  */
 package servlet;
 
-import MA_package.SaleProduct;
+import MA_package.KidsProduct;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -13,15 +13,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Asus
+ * @author sathi
  */
-@WebServlet(name = "addToCartSale", urlPatterns = {"/addToCartSale"})
-public class addToCartSale extends HttpServlet {
-private static final long serialVersionUID = 1L;
+@WebServlet(name = "QuantityIncDecServlet", urlPatterns = {"/quantity-inc-dec"})
+public class QuantityIncDecServlet extends HttpServlet {
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -39,10 +38,10 @@ private static final long serialVersionUID = 1L;
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet addToCartSale</title>");            
+            out.println("<title>Servlet QuantityIncDecServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet addToCartSale at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet QuantityIncDecServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -60,43 +59,31 @@ private static final long serialVersionUID = 1L;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-     
-                 response.setContentType("text/html;charset=UTF-8");
-        try(PrintWriter out = response.getWriter()){
-            ArrayList<SaleProduct> cartListSale = new ArrayList<>();
-            String id = request.getParameter("id");
-            SaleProduct cm = new SaleProduct();
-            if (id != null) {
-            cm.setId(id);
-            cm.setQuantity(1);
-            }
+        
+        
+        response.setContentType("text/html;charset=UTF-8");
+        try(PrintWriter out = response.getWriter();){
+            String action = request.getParameter("action");
+            String id = (request.getParameter("id"));
             
-            HttpSession session = request.getSession();
-            ArrayList<SaleProduct> cart_list_sale = (ArrayList<SaleProduct>) session.getAttribute("cart-list-sale");
-            if (cart_list_sale == null) {
-                cartListSale.add(cm);
-                session.setAttribute("cart-list-sale", cartListSale);
-               response.sendRedirect("index.jsp");
-            } else {
-                cartListSale = cart_list_sale;
-
-                boolean exist = false;
-                for (SaleProduct c : cart_list_sale) {
-                    if (c.getId().equals(id)) {
-                        exist = true;
-                        out.println("<h3 style='color:crimson; text-align: center'>Item Already in Cart. <a href='cart.jsp'>GO to Cart Page</a></h3>");
+            request.getSession().getAttribute("cart_list_kids");
+            ArrayList<KidsProduct>  cartListKids = (ArrayList<KidsProduct>) request.getSession().getAttribute("cartListKids");
+        
+            if(action != null ){
+                if(action.equals("inc")){
+                    for(KidsProduct c:cartListKids){
+                        if(c.getId() == id){
+                            int quantity = c.getQuantity();
+                            quantity++;
+                            c.setQuantity(quantity);
+                            response.sendRedirect("cart.jsp");
+                        }
                     }
                 }
-
-                if (!exist) {
-                    cartListSale.add(cm);
-                    response.sendRedirect("index.jsp");
-                }
             }
+            
         }
-        
-        
-        
+     //   processRequest(request, response);
     }
 
     /**
@@ -110,9 +97,7 @@ private static final long serialVersionUID = 1L;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-
-        
+        processRequest(request, response);
     }
 
     /**
