@@ -87,7 +87,7 @@
         </div>
 
         <div class="card">
-            <a href="collection.jsp">
+            <a href="Admin_all books.jsp">
                 <div class="card-body text-center">
                     <i class="fas fa-layer-group"></i>
                     <h4>COLLECTION</h4>
@@ -96,7 +96,7 @@
         </div>
 
         <div class="card">
-            <a href="orders.jsp">
+            <a href="Order.jsp">
                 <div class="card-body text-center">
                     <i class="fas fa-shopping-cart"></i>
                     <h4>ORDERS</h4>
