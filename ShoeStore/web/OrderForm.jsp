@@ -131,7 +131,7 @@
                 <h2>Product Order Form</h2>
             </div>
             <div class="d-flex">
-                <form action="" method="">
+                <form action="order" method="POST">
                     <label>
                         <span class="fname">First Name <span class="required">*</span></span>
                         <input type="text" name="fname">
@@ -178,23 +178,23 @@
                     </label>
                     <label>
                         <span>State / County <span class="required">*</span></span>
-                        <input type="text" name="city"> 
+                        <input type="text" name="state"> 
                     </label>
                     <label>
                         <span>Postcode / ZIP <span class="required">*</span></span>
-                        <input type="text" name="city"> 
+                        <input type="text" name="zip"> 
                     </label>
                     <label>
                         <span>Phone <span class="required">*</span></span>
-                        <input type="tel" name="city"> 
+                        <input type="tel" name="phone"> 
                     </label>
                     <label>
                         <span>Email Address <span class="required">*</span></span>
-                        <input type="email" name="city"> 
+                        <input type="email" name="email"> 
                     </label>
-                    <a href="checkout.jsp" class="mx-3 button">Place Order</a></div>
+                    <input type="submit" class="mx-3 button" value="Place Order">
         </form>
-        <!-- Yorder -->
+      </div>
     </div>
 </div>
 </body>

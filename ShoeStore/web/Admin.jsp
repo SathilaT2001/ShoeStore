@@ -78,23 +78,25 @@
         </a>
     </div>
 
-    <div class="card">
-        <a href="Admin_Allbooks">
-            <div class="card-body text-center">
-                <i class="fas fa-layer-group text-danger"></i>
-                <h4>COLLECTION</h4>
-            </div>
-        </a>
-    </div>
 
-    <div class="card">
-        <a href="orders.jsp">
-            <div class="card-body text-center">
-                <i class="fas fa-shopping-cart text-warning"></i>
-                <h4>ORDERS</h4>
-            </div>
-        </a>
-    </div>
+        <div class="card">
+            <a href="Admin_all books.jsp">
+                <div class="card-body text-center">
+                    <i class="fas fa-layer-group"></i>
+                    <h4>COLLECTION</h4>
+                </div>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="Order.jsp">
+                <div class="card-body text-center">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h4>ORDERS</h4>
+                </div>
+            </a>
+        </div>
+
 
     <div class="card">
         <a href="logout.jsp">

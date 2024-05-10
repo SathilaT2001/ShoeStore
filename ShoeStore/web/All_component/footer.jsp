@@ -33,9 +33,9 @@
                 
                 <div class="box">
                     <p class="footerh3">contact info</p>
-                    <a href="#"> <i class="fas fa-phone"></i> +9477245389 </a>
+                    <a href="#"> <i class="fas fa-phone"></i> 0812302030 </a>
                     <a href="#"> <i class="fas fa-phone"></i> +9471154876</a>
-                    <a href="#"> <i class="fas fa-envelope"></i> chamika@gmail.com</a>
+                    <a href="#"> <i class="fas fa-envelope"></i> Shoestore@Gmail.Com</a>
                 </div>
                 
             </div>
@@ -48,7 +48,9 @@
                 <a href="#" class="fab fa-pinterest"></a> 
             </div>
             
-            <div class="credit"> created by <span>ShoiNet Group</span> | all rights reserved! </div>
+
+            <div class="credit"> created by <span>mr.Api(NSBM) designer</span> | all rights reserved! </div>
+
         
         </section>
                 

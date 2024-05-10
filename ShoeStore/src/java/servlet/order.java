@@ -2,21 +2,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package newpackage;
+package servlet;
 
+import MA_package.DBConnection;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author vinumi
+ * @author Asus
  */
-public class LoginServlet extends HttpServlet {
+@WebServlet(name = "order", urlPatterns = {"/order"})
+public class order extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,30 +37,10 @@ public class LoginServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");            
+            out.println("<title>Servlet order</title>");            
             out.println("</head>");
             out.println("<body>");
-           
-            String lEmail = request.getParameter ("email");
-            String lpass = request.getParameter("password");
-             if("Admin".equals(lEmail) && "Admin".equals(lpass)){
-                 out.println("<h2>Login Successful!</h2>");
-                response.sendRedirect("Admin.jsp");
-                
-            } else {
-            UserDatabase db = new UserDatabase(ConnectionPro.getConnection());
-            User user = db.logUser(lEmail, lpass);
-            
-            if(user!=null){
-      
-                HttpSession session  = request.getSession();
-                session.setAttribute("loguser",user);
-                out.println("<h2>Login Successful!</h2>");
-                response.sendRedirect("index.jsp");
-            }else{
-                out.print("user not found");
-            }}
-            
+            out.println("<h1>Servlet order at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -76,9 +58,6 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                      String password = null;
-       String admin = null;
-     
         processRequest(request, response);
     }
 
@@ -93,7 +72,29 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      processRequest(request, response);
+        String fname = request.getParameter("fname");
+        String lname = request.getParameter("lname");
+        String selection = request.getParameter("selection");
+        String houseadd = request.getParameter("houseadd");
+        String apartment = request.getParameter("apartment");
+        String city = request.getParameter("city");
+        String state = request.getParameter("state");
+        String zip = request.getParameter("zip");
+        String phone = request.getParameter("phone");
+        String email = request.getParameter("email");
+DBConnection db= new DBConnection();
+db.connectToDB();
+
+
+
+
+
+
+        orderInsert oi = new orderInsert();
+        
+        oi.orderInsert(fname, lname, selection, houseadd, apartment, city, state, zip, phone, email);
+        
+        response.sendRedirect("checkout.jsp");
     }
 
     /**
