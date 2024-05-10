@@ -7,6 +7,7 @@ package newpackage;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author vinumi
  */
+@WebServlet("/log-out")
 public class LogoutServlet extends HttpServlet {
 
     /**
@@ -31,6 +33,12 @@ public class LogoutServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            if(request.getSession().getAttribute("loguser")!=null){
+                request.getSession().removeAttribute("loguser");
+                response.sendRedirect("login.jsp");
+            }else{
+                response.sendRedirect("index.jsp");
+            }
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -39,9 +47,7 @@ public class LogoutServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             
-            HttpSession session = request.getSession();
-            session.removeAttribute("logUser");
-            response.sendRedirect("index.jsp");
+           
             
             out.println("</body>");
             out.println("</html>");

@@ -11,7 +11,14 @@
         <div class="icons">
             
             <a href="cart.jsp" class="fas fa-shopping-cart"><span class="cartcount" id="count">0</span></a>
-            <a href="login.jsp" id="login-btn" class="fas fa-user"></a>
+             <a href="login.jsp" id="login-btn" class="fas fa-user"></a>
+             <a href="Order.jsp">Orders</a> 
+             <a href ="log-out">Log out</a>
+                
+                  
+               
+            
+           
         </div>
     </div>
     
