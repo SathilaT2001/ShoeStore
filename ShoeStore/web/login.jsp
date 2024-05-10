@@ -1,9 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
+
+
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ShoeNet:login</title>
         <%@include file="All_component/allcss.jsp"%>
         
@@ -116,14 +118,6 @@
                      <input type="text"placeholder="Username" name="email" required>
                      
                      <input type="password" placeholder="password" name="password" required>
-
-                     <input type="submit" value="Login">
-                     <a href="registration.jsp">Create New Account</a>
-                 </form>
-             </div>
-         </div>             
-        </body>
-
                      <input type="submit" value="Login" class="button">
                      
                      <a href="registeration.jsp">Create New Account</a>
@@ -135,5 +129,4 @@
     
 
     </body>
->>>>>>> Stashed changes
 </html>
